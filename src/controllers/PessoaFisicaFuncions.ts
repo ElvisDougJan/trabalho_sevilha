@@ -26,6 +26,4 @@ const verificaNomeRepetido = nome => listaPessoasFisicas.filter(pessoa => pessoa
 
 export const consultaPessoasRepetidas = (req, res) => res.send(verificaNomeRepetido(req.body.nome))
 
-export const consultaQtdPessoasRepetidas = (req, res) => {
-  res.send(`Existem ${verificaNomeRepetido(req.body.nome).length} com o nome ${req.body.nome}`)
-}
+export const consultaQtdPessoasRepetidas = (req, res) => res.send(`Existem ${verificaNomeRepetido(req.body.nome).length} com o nome ${req.body.nome}`)
