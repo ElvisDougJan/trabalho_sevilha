@@ -1,0 +1,57 @@
+Para rodar a aplicação, no terminal rode o comando npm install para instalar todas as dependencias
+
+Inicie a aplicação com o comando npm start
+
+Após isso com o Postman (https://www.getpostman.com/), realize as seguintes operações
+na rota localhost:3000/pessoa-fisica/cria como POST, envie um JSON contendo:
+{
+	"nome": "Rafael",
+	"numero": "44 999027914",
+	"endereco": "Rua 04",
+	"cpf": "09238326967"
+}
+
+Irá criar um usuário. Pode criar outros.
+
+Para consultar use GET na rota localhost:3000/pessoa-fisica/consulta
+
+Você pode informar a idade na rota localhost:3000/pessoa-fisica/informa-idade como POST mandando:
+{
+	"idade": "23"
+}
+
+Também pode informar o INSS na rota localhost:3000/pessoa-fisica/calcula-inss, passando o salario em JSON:
+{
+	"salario": 4800
+}
+
+Irá retornar uma mensagem.
+
+Também pode verificar quantos usuários possuem o mesmo nome na rota localhost:3000/pessoa-fisica/verifica-qtd
+como POST, informando o nome no JSON:
+{
+	"nome": "Rafael"
+}
+
+Você também pode consultar CPF, numero, endereco passando um JSON com o nome de quem quer consultar:
+{
+	"nome": "Rafael"
+}
+
+Para CPF: localhost:3000/pessoa-fisica/cpf
+Para numero: localhost:3000/pessoa-fisica/numero
+Para endereço: localhost:3000/pessoa-fisica/endereco
+
+
+
+PARADIGMAS USADOS:
+
+Orientação a Objetos:
+Interface: Pessoa
+Models: PessoaFisica, PessoaJuridica
+
+Estruturada:
+Controllers: PessoaFisicaController
+
+Funcional:
+Controllers: PessoaFisicaFunctions

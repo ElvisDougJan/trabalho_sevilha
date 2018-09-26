@@ -16,11 +16,11 @@ router.get('/nome', (req: Request, res: Response) => {
   PessoaFisicaController.consultaNomePF(req, res)
 })
 
-router.get('/numero', (req: Request, res: Response) => {
+router.post('/numero', (req: Request, res: Response) => {
   PessoaFisicaController.consultaNumeroPF(req, res)
 })
 
-router.get('/cpf', (req: Request, res: Response) => {
+router.post('/cpf', (req: Request, res: Response) => {
   PessoaFisicaController.consultaCpfPF(req, res)
 })
 

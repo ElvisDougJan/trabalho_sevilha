@@ -13,10 +13,10 @@ router.get('/consulta', (req, res) => {
 router.get('/nome', (req, res) => {
     PessoaFisicaController.consultaNomePF(req, res);
 });
-router.get('/numero', (req, res) => {
+router.post('/numero', (req, res) => {
     PessoaFisicaController.consultaNumeroPF(req, res);
 });
-router.get('/cpf', (req, res) => {
+router.post('/cpf', (req, res) => {
     PessoaFisicaController.consultaCpfPF(req, res);
 });
 router.put('/altera-nome', (req, res) => {

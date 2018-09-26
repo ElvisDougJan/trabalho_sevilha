@@ -18,19 +18,28 @@ function consultaPF(req, res) {
 }
 exports.consultaPF = consultaPF;
 function consultaNomePF(req, res) {
-    res.json(`O nome é: ${pessoaFisica.getNome()}`);
+    listaPessoaFisica.forEach(pessoa => pessoa.nome === req.body.nome
+        ? res.json(`O nome é ${pessoa.nome}`)
+        : res.status(404).json('Usuário não encontrado'));
 }
 exports.consultaNomePF = consultaNomePF;
 function consultaNumeroPF(req, res) {
-    res.json(`O número de ${pessoaFisica.getNome()} é: ${pessoaFisica.getNumero()}`);
+    listaPessoaFisica.forEach(pessoa => pessoa.nome === req.body.nome
+        ? res.json(`O número de ${pessoa.nome} é: ${pessoa.numero}`)
+        : res.status(404).json('Usuário não encontrado'));
 }
 exports.consultaNumeroPF = consultaNumeroPF;
 function consultaEnderecoPF(req, res) {
+    listaPessoaFisica.forEach(pessoa => pessoa.nome === req.body.nome
+        ? res.json(`O endereço de ${pessoa.nome} é: ${pessoa.endereco}`)
+        : res.status(404).json('Usuário não encontrado'));
     res.json(`O endereço de  ${pessoaFisica.getNome()} é: ${pessoaFisica.getEndereco()}`);
 }
 exports.consultaEnderecoPF = consultaEnderecoPF;
 function consultaCpfPF(req, res) {
-    res.json(`O CPF de ${pessoaFisica.getNome()} é ${pessoaFisica.getCpf()}`);
+    listaPessoaFisica.forEach(pessoa => pessoa.nome === req.body.nome
+        ? res.json(`O CPF de ${pessoa.nome} é: ${pessoa.cpf}`)
+        : res.status(404).json('Usuário não encontrado'));
 }
 exports.consultaCpfPF = consultaCpfPF;
 function alteraNome(req, res) {

@@ -19,6 +19,4 @@ exports.calculaINSS = (req, res) => {
 };
 const verificaNomeRepetido = nome => PessoaFisicaController_1.listaPessoasFisicas.filter(pessoa => pessoa.nome === nome ? pessoa : null);
 exports.consultaPessoasRepetidas = (req, res) => res.send(verificaNomeRepetido(req.body.nome));
-exports.consultaQtdPessoasRepetidas = (req, res) => {
-    res.send(`Existem ${verificaNomeRepetido(req.body.nome).length} com o nome ${req.body.nome}`);
-};
+exports.consultaQtdPessoasRepetidas = (req, res) => res.send(`Existem ${verificaNomeRepetido(req.body.nome).length} com o nome ${req.body.nome}`);
